@@ -1,0 +1,16 @@
+options:
+  internal_interface: "em0"
+  external_interface: "em1"
+
+config_dhcpd:
+  configs:
+    - source: "pf.conf.template"
+      destination: "/etc/dhcpd.conf.template"
+      options:
+        internal_if: "em1"
+
+
+only_commands:
+  commands:
+    - "sudo apt_get install"
+    - "sudo apt_get stuff"
